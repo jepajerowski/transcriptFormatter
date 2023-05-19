@@ -9,6 +9,16 @@
     <script src="https://cdn.tiny.cloud/1/gnzfdibcl6nclazne0iginh9nrmn9e127s267xwqkvmzbmq8/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
     <style>
+    .main{
+        padding:1rem;
+        max-width:1000px;
+        margin:auto;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: sans-serif;
+    }
+
     #submitContainer {
         display: flex;
         justify-content: left;
@@ -38,36 +48,36 @@
 </head>
 
 <body>
-   
-<h1>Format podcast transcript for Atypon DO</h1>
-
-    <div id="live-demo_pane_run_default-editor" class="tab-pane" aria-labelledby="live-demo_tab_run_default-editor">
-        <textarea id="tiny">
-          <p>Paste transcript from Descript here</p>
-        </textarea>
-        <div id="submitContainer">
-            <button id="submit">Format and copy to clipboard</button>
-            <div id="confirmation">Below text copied to clipboard</div>
-        </div>
-        <pre id="output-content" class="contentDumpBox">
-          Click the submit button to view the output HTML.
-        </pre>
-         <script>
-    $('textarea#tiny').tinymce({
-        height: 500,
-        menubar: 'tools',
-        plugins: [
-            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-            'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
-            'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
-        ],
-        toolbar: 'undo redo | blocks | bold italic backcolor | ' +
-            'alignleft aligncenter alignright alignjustify | ' +
-            'bullist numlist outdent indent | removeformat | help'
-    });
-    </script>
-    <script src="transcriptFormatter.js"></script>
-    </div>
+ <div class="main">  
+ <h1>Format podcast transcript for Atypon DO</h1>
+ 
+     <div id="live-demo_pane_run_default-editor" class="tab-pane" aria-labelledby="live-demo_tab_run_default-editor">
+         <textarea id="tiny">
+           <p>Paste transcript from Descript here.</p>
+         </textarea>
+         <div id="submitContainer">
+             <button id="submit">Format and copy to clipboard</button>
+             <div id="confirmation">HTML copied to clipboard</div>
+         </div>
+         <pre id="output-content" class="contentDumpBox">
+           Click the submit button to view the output HTML.
+         </pre>
+          <script>
+     $('textarea#tiny').tinymce({
+         height: 500,
+         menubar: 'tools',
+         plugins: [
+             'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+             'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+             'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+         ],
+         toolbar: 'undo redo | blocks | bold italic backcolor | ' +
+             'alignleft aligncenter alignright alignjustify | ' +
+             'bullist numlist outdent indent | removeformat | help'
+     });
+     </script>
+     <script src="transcriptFormatter.js"></script>
+     </div></div>
 </body>
 
 </html>
