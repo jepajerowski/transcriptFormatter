@@ -48,35 +48,31 @@
 </head>
 
 <body>
- <div class="main">  
- <h1>Format podcast transcript for Atypon DO</h1>
- 
-     <div id="live-demo_pane_run_default-editor" class="tab-pane" aria-labelledby="live-demo_tab_run_default-editor">
-         <textarea id="tiny" placeholder="Paste transcript from Descript here.">
-         </textarea>
-         <div id="submitContainer">
-             <button id="submit">Format and copy to clipboard</button>
-             <div id="confirmation">HTML copied to clipboard</div>
-         </div>
-         <pre id="output-content" class="contentDumpBox">
-           Click the format button to view the output HTML.
-         </pre>
-          <script>
-     $('textarea#tiny').tinymce({
-         height: 500,
-         menubar: 'tools',
-         plugins: [
-             'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-             'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
-             'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
-         ],
-         toolbar: 'undo redo | blocks | bold italic backcolor | ' +
-             'alignleft aligncenter alignright alignjustify | ' +
-             'bullist numlist outdent indent | removeformat | help'
-     });
-     </script>
-     <script src="transcriptFormatter.js"></script>
-     </div></div>
-</body>
+    <div class="main">
+        <h1>Format podcast transcript for Atypon DO</h1>
+        <p>This tool adds formatting and styling to podcast transcripts to be included in podcast Digital Objects on science.org.</p>
+        <p><strong>Instructions:</strong> Copy the podcast transcript from the Word document provided by Scribie and paste into the text editor below. In the <strong>Body</strong> section of the science.org DO editor, select <strong>Tools > Source Code</strong>, then paste the output HTML at the end of the contents.</p>
+        
+        <div id="live-demo_pane_run_default-editor" class="tab-pane" aria-labelledby="live-demo_tab_run_default-editor">
+            <textarea id="tiny" placeholder="Paste transcript from Scribie here.">
+            </textarea>
+            <div id="submitContainer">
+                <button id="submit">Format and copy to clipboard</button>
+                <div id="confirmation">HTML copied to clipboard</div>
+            </div>
+                     <pre id="output-content" class="contentDumpBox">
+                           Click the format button to view the output HTML.
+            </pre>
+            <script>
+            $('textarea#tiny').tinymce({
+            height: 500,
+            menubar: 'file edit tools',
+            plugins: [ 'fullscreen',  'code'],
+            toolbar: 'undo redo'
+            });
+            </script>
+            <script src="transcriptFormatter.js"></script>
+        </div></div>
+    </body>
 
 </html>
